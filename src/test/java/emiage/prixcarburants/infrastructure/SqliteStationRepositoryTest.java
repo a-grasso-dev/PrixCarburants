@@ -6,8 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -34,7 +34,9 @@ public class SqliteStationRepositoryTest {
                 )""");
             st.execute("""
                 INSERT INTO Station VALUES
-                (1000001, '596, AVENUE DE TREVOUX', '01000', 'Saint-Denis-lès-Bourg', 46.201, 5.198, 0, '01')
+                (1000001, '596, AVENUE DE TREVOUX', '01000', 'Saint-Denis-lès-Bourg', 46.201, 5.198, 0, '01'),
+                (1000002, '16, Avenue de Marboz', '01000', 'BOURG-EN-BRESSE', 46.21842, 5.22767, 0, '01'),
+                (75015030, '1, QUATER BOULEVARD VICTOR', '75015', 'PARIS', 48.834, 2.285, 1, '75')
                 """);
         }
 
@@ -47,7 +49,7 @@ public class SqliteStationRepositoryTest {
     }
 
     @Test
-    public void trouverParIdTest() throws SQLException {
+    public void trouverParIdTest() {
 
         Station station = repository.trouverParId(1000001);
 
@@ -62,8 +64,23 @@ public class SqliteStationRepositoryTest {
     }
 
     @Test
-    public void trouverParIdNullTest() throws SQLException {
+    public void trouverParIdNullTest() {
         Station station = repository.trouverParId(999999);
         assertNull(station);
+    }
+
+    @Test
+    public void trouverParDepartementTest() {
+        List<Station> stations = repository.trouverParDepartement("01");
+        assertEquals(2, stations.size());
+        for (Station station : stations) {
+            assertEquals("01", station.getNumeroDepartement());
+        }
+    }
+
+    @Test
+    public void trouverParDepartementVideTest() {
+        List<Station> stations = repository.trouverParDepartement("99");
+        assertTrue(stations.isEmpty());
     }
 }
