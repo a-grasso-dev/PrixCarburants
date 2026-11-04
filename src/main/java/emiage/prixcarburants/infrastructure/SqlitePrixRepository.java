@@ -53,6 +53,31 @@ public class SqlitePrixRepository implements PrixRepository {
 
     @Override
     public double prixMoyenParRegion(int idCarburant, String codeRegion) {
+        String sql = """
+                SELECT ROUND(AVG(p.prix), 3) AS prix_moyen
+                FROM Prix p
+                JOIN Station s ON p.id_station = s.id_station
+                JOIN Departement d ON s.numero_departement = d.numero
+                JOIN Region r ON d.code_region = r.code_region
+                WHERE p.id_carburant = ?
+                AND r.code_region = ?""";
+
+        try (PreparedStatement ps = connection.prepareStatement(sql)) {
+            ps.setInt(1, idCarburant);
+            ps.setString(2, codeRegion);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    double moyenne = rs.getDouble("prix_moyen");
+                    if (rs.wasNull()) {
+                        throw new RuntimeException("Aucun prix pour le carburant " + idCarburant + " dans la région " + codeRegion);
+                    }
+                    return moyenne;
+                }
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return 0;
     }
 }
