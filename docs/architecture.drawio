@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Page-1" id="jbyR5mSJUUrHvd9pQMLi">
-    <mxGraphModel dx="1236" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="777" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,7 +12,20 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="u8zTB98pfLrD6hUyTcha-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;PRESENTATION&lt;/font&gt;&lt;/b&gt;&lt;div&gt;StationResource&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;code dir=&quot;ltr&quot;&gt;PrixResource&lt;/code&gt;&lt;/div&gt;" vertex="1">
+        <mxCell id="tzLFuR4A6spDVf2x7Glu-1" edge="1" parent="1" source="u8zTB98pfLrD6hUyTcha-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="u8zTB98pfLrD6hUyTcha-4">
+          <mxGeometry relative="1" x="-0.0587" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="120" />
+              <mxPoint x="565" y="261.3" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tzLFuR4A6spDVf2x7Glu-2" connectable="0" parent="tzLFuR4A6spDVf2x7Glu-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;crée&lt;/font&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.003" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="u8zTB98pfLrD6hUyTcha-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=3;" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;PRESENTATION&lt;/font&gt;&lt;/b&gt;&lt;div&gt;StationResource&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;&lt;/font&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;code dir=&quot;ltr&quot;&gt;PrixResource&lt;/code&gt;&lt;/div&gt;&lt;div&gt;&lt;code dir=&quot;ltr&quot;&gt;RepositoryFactory&lt;/code&gt;&lt;/div&gt;" vertex="1">
           <mxGeometry height="90" width="340" x="80" y="50" as="geometry" />
         </mxCell>
         <mxCell id="u8zTB98pfLrD6hUyTcha-7" edge="1" parent="1" source="u8zTB98pfLrD6hUyTcha-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;dashPattern=8 8;" target="u8zTB98pfLrD6hUyTcha-3">
